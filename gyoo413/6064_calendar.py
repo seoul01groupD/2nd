@@ -1,6 +1,10 @@
 T = int(input())
 for tc in range(T):
     m, n, x, y = map(int, input().split())
+    if x == m:
+        x = 0
+    if y == n:
+        y = 0
 
     def gcd(a, b):
         x = min(a, b); y = max(a, b)
@@ -12,16 +16,16 @@ for tc in range(T):
 
     g = gcd(m, n)
 
-    if g != 1 and (x % g == 0 or y % g == 0):
+    if g != 1 and abs(x - y) % g != 0:
         print(-1)
     else:
-        i = 1
+        i = 0
         while True:
             if m == 1 and n == 1:
                 print(1)
                 break
-            if i % m == x and i % n == y:
-                print(i)
+            if (m * i + x) % n == y and (m * i + x) > 0:
+                print(m * i + x)
                 break
             else:
                 i += 1
