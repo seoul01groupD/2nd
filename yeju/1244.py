@@ -50,5 +50,5 @@ for _ in range(S):
         arr = women(arr,N,s_idx)
 
 # 20개씩 출력하기
-for i in range(0,len(arr),20):
+for i in range(0,N,20):
     print(*arr[i:i+20])
