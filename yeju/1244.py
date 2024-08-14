@@ -32,17 +32,17 @@ def women(arr,N,idx):
         arr[idx] = 0
     return arr
 
-# import sys
-# inputs = sys.stdin.readline()
-# N = int(inputs)
-# arr = list(map(int,inputs.split()))
-# S = int(inputs)
+import sys
+inputs = sys.stdin.readline()
+N = int(inputs)
+arr = list(map(int,inputs.split()))
+S = int(inputs)
 
-N = int(input())
-arr = list(map(int,input().split()))
-S = int(input())
+# N = int(input())
+# arr = list(map(int,input().split()))
+# S = int(input())
 for _ in range(S):
-    s, s_idx = map(int,input().split())
+    s, s_idx = map(int,inputs.split())
     # 성별에 따라 스위치 조정
     if s == 1:
         arr = men(arr,N,s_idx)
