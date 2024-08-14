@@ -2,18 +2,12 @@
 # 선택정렬을 사용하려 했으니 시간초과로 사용X
 
 N = int(input())
-
 arr = []
 for i in range(N):
     arr.append(int(input()))
 
 # 리스트 정렬
 arr = sorted(arr)
-
-# 합계
-n_sum = 0
-for x in arr:
-    n_sum += x
 
 # 최빈값
 count = {}
@@ -22,11 +16,9 @@ for x in arr:
 for x in arr:
     count[x] += 1
 
-max_count = max(count.values())
-
 mode_lst = []
 for k, v in count.items():
-    if v == max_count:
+    if v == max(count.values()):
         mode_lst.append(k)
 
 # 산술평균

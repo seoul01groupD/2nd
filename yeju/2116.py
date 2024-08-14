@@ -44,6 +44,6 @@ for i in range(6):
                 a, b = lst[j][5], lst[j][0]
         if dice[j][i] != a and dice[j][i] != b:
             sum_row.append(dice[j][i])
+            print(a,b)
 
-
-        print(sum_row)
+        # print(sum_row)
