@@ -13,40 +13,37 @@ N = 5
 dice = [[2,3,1,6,5,4],[3,1,2,4,6,5],[5,6,4,1,3,2],[1,3,6,2,4,5],[4,1,6,5,2,3]]
 #  [list(map(int,input().split())) for _ in range(N)]
 
-lst = copy.deepcopy(dice)
+
 # lst_all =
 sum_dice = 0
 
-for i in range(5):
+for i in range(6):
+    lst = copy.deepcopy(dice)
     sum_row = []
-    for j in range(6):
-        if i == 0:
-            if j == 0:
-                a,b = lst[i][0],lst[i][5]
-            elif j == 1 or j == 2:
-                a,b = lst[i][j],lst[i][j+2]
-            elif j == 3 or j == 4:
-                a, b = lst[i][j], lst[i][j - 2]
+    for j in range(5):
+        if j == 0:
+            if i == 0:
+                a, b = lst[j][0], lst[j][5]
+            elif i == 1 or i == 2:
+                a, b = lst[j][i], lst[j][i+2]
+            elif i == 3 or i == 4:
+                a, b = lst[j][i], lst[j][i - 2]
             else:
-                a, b = lst[i][5], lst[i][0]
-            dice[i].remove(a)
-            dice[i].remove(b)
-            sum_row.append(dice[i])
-            break
+                a, b = lst[j][5], lst[j][0]
+            print(a,b)
 
         else:
-            idx = find_idx(lst[i],b)
+            idx = find_idx(lst[j], b)
             if idx == 0:
-                a,b = lst[i][0],lst[i][5]
+                a, b = lst[j][0], lst[j][5]
             elif idx == 1 or idx == 2:
-                a,b = lst[i][idx],lst[i][idx+2]
+                a, b = lst[j][idx], lst[j][idx+2]
             elif idx == 3 or idx == 4:
-                a, b = lst[i][idx], lst[i][idx - 2]
+                a, b = lst[j][idx], lst[j][idx - 2]
             else:
-                a, b = lst[i][5], lst[i][0]
-            dice[i].remove(a)
-            dice[i].remove(b)
-            sum_row.append(dice[i])
-            break
+                a, b = lst[j][5], lst[j][0]
+        if dice[j][i] != a and dice[j][i] != b:
+            sum_row.append(dice[j][i])
 
-    print(sum_row)
+
+        print(sum_row)
