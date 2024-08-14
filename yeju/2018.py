@@ -1,4 +1,4 @@
-# 2108
+# 2108 ---> 시간초과
 
 # 선택정렬
 def Selection_Sort(arr,N):
